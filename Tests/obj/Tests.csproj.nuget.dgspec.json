@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/sophie/Worditt/Worditt.csproj": {}
+    "/home/sophie/Worditt/Tests/Tests.csproj": {}
   },
   "projects": {
-    "/home/sophie/Worditt/Worditt.csproj": {
+    "/home/sophie/Worditt/Tests/Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/sophie/Worditt/Worditt.csproj",
-        "projectName": "Worditt",
-        "projectPath": "/home/sophie/Worditt/Worditt.csproj",
+        "projectUniqueName": "/home/sophie/Worditt/Tests/Tests.csproj",
+        "projectName": "Tests",
+        "projectPath": "/home/sophie/Worditt/Tests/Tests.csproj",
         "packagesPath": "/home/sophie/.nuget/packages/",
-        "outputPath": "/home/sophie/Worditt/obj/",
+        "outputPath": "/home/sophie/Worditt/Tests/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/sophie/.nuget/NuGet/NuGet.Config"
@@ -40,19 +40,19 @@
           "dependencies": {
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.1.0, )"
+              "version": "[16.11.0, )"
             },
             "NUnit": {
               "target": "Package",
               "version": "[3.13.2, )"
             },
-            "Nunit3TestAdapter": {
+            "NUnit3TestAdapter": {
               "target": "Package",
-              "version": "[4.2.1, )"
+              "version": "[4.0.0, )"
             },
-            "Swashbuckle.AspNetCore": {
+            "coverlet.collector": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[3.1.0, )"
             }
           },
           "imports": [
@@ -72,9 +72,6 @@
             }
           ],
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
