@@ -6,8 +6,8 @@ public static class WordList
 
     public static void PopulateWordList()
     {
-        var filePath = "/home/slacey/Worditt/sgb-words.txt";
-        // TODO replace this with something better ^^^
+        var filePath = "..//Worditt//sgb-words.txt";
+        
         var sb = new StringBuilder();
         int counter = 0;
         

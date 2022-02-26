@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/slacey/Worditt/Worditt.csproj": {}
+    "/home/sophie/Worditt/Worditt.csproj": {}
   },
   "projects": {
-    "/home/slacey/Worditt/Worditt.csproj": {
+    "/home/sophie/Worditt/Worditt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/slacey/Worditt/Worditt.csproj",
+        "projectUniqueName": "/home/sophie/Worditt/Worditt.csproj",
         "projectName": "Worditt",
-        "projectPath": "/home/slacey/Worditt/Worditt.csproj",
-        "packagesPath": "/home/slacey/.nuget/packages/",
-        "outputPath": "/home/slacey/Worditt/obj/",
+        "projectPath": "/home/sophie/Worditt/Worditt.csproj",
+        "packagesPath": "/home/sophie/.nuget/packages/",
+        "outputPath": "/home/sophie/Worditt/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/slacey/.nuget/NuGet/NuGet.Config"
+          "/home/sophie/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
