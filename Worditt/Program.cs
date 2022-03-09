@@ -1,5 +1,4 @@
 var builder = WebApplication.CreateBuilder(args);
-WordList.PopulateWordList();
 // Add services to the container.
 
 builder.Services.AddControllers();
