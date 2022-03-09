@@ -1,9 +1,15 @@
-public static class WordSelector
+public class WordSelector
 {
     private static Word _selectedWord = new Word();
     private static DateTime _lastWordUpdateTime;
     private static List<Word> _previouslySelectedWords = new List<Word>();
-    public static Word SelectedWord
+    private IWordProvider _wordProvider;
+
+    public WordSelector(IWordProvider wordProvider)
+    {
+        _wordProvider = wordProvider;
+    }
+    public Word SelectedWord
     {
         get
         {
@@ -20,16 +26,18 @@ public static class WordSelector
         }
     }
 
-    private static Word SelectNewWord()
+    private Word SelectNewWord()
     {
-        var random = new Random();
-        var randomNumber = random.Next(0, WordList.AllWords.Count - 1);
+        var wordList = _wordProvider.GetWordList();
 
-        var todaysWord = WordList.AllWords[random.Next(0, WordList.AllWords.Count - 1)];
+        var random = new Random();
+        var randomNumber = random.Next(0, wordList.Count - 1);
+
+        var todaysWord = wordList[random.Next(0, wordList.Count - 1)];
 
         _previouslySelectedWords.Insert(0, todaysWord);
-        WordList.AllWords.Remove(randomNumber);
+        wordList.Remove(randomNumber);
 
-        return WordList.AllWords[random.Next(0, WordList.AllWords.Count - 1)];
+        return wordList[random.Next(0, wordList.Count - 1)];
     }
 }
