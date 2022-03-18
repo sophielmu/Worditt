@@ -28,7 +28,7 @@ public class WordSelector
         }
     }
 
-    private Word SelectNewWord(int randomNumber)
+    internal Word SelectNewWord(int randomNumber)
     {
         var wordList = _wordProvider.GetWordList();
 
