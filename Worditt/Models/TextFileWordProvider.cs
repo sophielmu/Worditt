@@ -26,4 +26,9 @@ public class TextFileWordProvider : IWordProvider
             counter++;
         }
     }
+
+    public void RemoveWord(int key)
+    {
+        _wordList.Remove(key);
+    }
 }

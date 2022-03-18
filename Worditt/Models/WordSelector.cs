@@ -2,7 +2,7 @@ public class WordSelector
 {
     private static Word _selectedWord = new Word();
     private static DateTime _lastWordUpdateTime;
-    private static List<Word> _previouslySelectedWords = new List<Word>();
+    private static List<int> _previouslySelectedKeys = new List<int>();
     private IWordProvider _wordProvider;
 
     public WordSelector(IWordProvider wordProvider)
@@ -34,10 +34,11 @@ public class WordSelector
 
         var todaysWord = wordList[randomNumber];
 
-        _previouslySelectedWords.Insert(0, todaysWord);
-        wordList.Remove(randomNumber);
+        _previouslySelectedKeys.Insert(0, randomNumber);
 
-        return wordList[randomNumber];
+        _wordProvider.RemoveWord(randomNumber);
+
+        return todaysWord;
     }
 
     private int GetRandomNumber()
@@ -45,6 +46,13 @@ public class WordSelector
         var wordCount = _wordProvider.GetWordList().Count;
 
         var random = new Random();
-        return random.Next(0, wordCount - 1);
+        int? randomNumber = null;
+
+        while (randomNumber == null || _previouslySelectedKeys.Contains((int)randomNumber))
+        {
+            randomNumber = random.Next(0, wordCount - 1);
+        }
+
+        return (int)randomNumber;
     }
 }
