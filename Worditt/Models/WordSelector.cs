@@ -15,7 +15,9 @@ public class WordSelector
         {
             if (_lastWordUpdateTime.Date != DateTime.Now.Date || _lastWordUpdateTime == default(DateTime))
             {
-                SelectedWord = SelectNewWord();
+                var randomNumber = GetRandomNumber();
+
+                SelectedWord = SelectNewWord(randomNumber);
                 _lastWordUpdateTime = DateTime.Now;
             }
             return _selectedWord;
@@ -26,18 +28,23 @@ public class WordSelector
         }
     }
 
-    private Word SelectNewWord()
+    private Word SelectNewWord(int randomNumber)
     {
         var wordList = _wordProvider.GetWordList();
 
-        var random = new Random();
-        var randomNumber = random.Next(0, wordList.Count - 1);
-
-        var todaysWord = wordList[random.Next(0, wordList.Count - 1)];
+        var todaysWord = wordList[randomNumber];
 
         _previouslySelectedWords.Insert(0, todaysWord);
         wordList.Remove(randomNumber);
 
-        return wordList[random.Next(0, wordList.Count - 1)];
+        return wordList[randomNumber];
+    }
+
+    private int GetRandomNumber()
+    {
+        var wordCount = _wordProvider.GetWordList().Count;
+
+        var random = new Random();
+        return random.Next(0, wordCount - 1);
     }
 }
